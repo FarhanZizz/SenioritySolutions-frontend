@@ -62,7 +62,7 @@ const ServiceDetails = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 my-10 gap-10">
       <div>
         <h1 className="text-primary text-3xl font-semibold mb-4">
-          Lorem ipsum dolor sit amet.
+          {data.name}
         </h1>
         <div className="flex gap-5 mb-5">
           <h1 className="text-primary text-xl">Price: ${data.price}</h1>
