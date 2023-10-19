@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-import Service from "./service";
+import Service from "./Service";
 
 const AllService = () => {
   const {
