@@ -73,12 +73,7 @@ const ServiceDetails = () => {
             Category: {data.category}
           </h1>
         </div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ex
-          voluptatem, veniam quia eveniet inventore provident ipsam non, laborum
-          voluptate ea consequatur harum nostrum dolores ducimus quae amet quas
-          beatae!
-        </p>
+        <p>{data.description}</p>
       </div>
       <div className="grid grid-cols-1 gap-3 rounded-lg">
         <div className="flex justify-between items-center">
@@ -145,12 +140,20 @@ const ServiceDetails = () => {
             </>
           )}
         </div>
-        {reviews.map((review) => (
+        {reviews.length ? (
+          reviews.map((review) => (
+            <div className="bg-base-200 p-5 rounded-lg">
+              <h1 className="text-primary mb-2">
+                Rating: {review.rating} stars
+              </h1>
+              <p>{review.comment}</p>
+            </div>
+          ))
+        ) : (
           <div className="bg-base-200 p-5 rounded-lg">
-            <h1 className="text-primary mb-2">Rating: {review.rating} stars</h1>
-            <p>{review.comment}</p>
+            <h1 className="text-lg text-center">No Reviews Yet!</h1>
           </div>
-        ))}
+        )}
       </div>
     </div>
   );
